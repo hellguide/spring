@@ -55,6 +55,7 @@ public abstract class KotlinDetector {
 	}
 
 	/**
+	 * 确定给定的{@code Class}是否是Kotlin类型
 	 * Determine whether the given {@code Class} is a Kotlin type
 	 * (with Kotlin metadata present on it).
 	 */

@@ -40,6 +40,9 @@ import org.springframework.util.ResourceUtils;
 import org.springframework.util.StringUtils;
 
 /**
+ * 翻译：{@link BeanDefinitionDocumentReader}接口的默认实现，该接口根据“spring-beans”DTD和XSD格式读取bean定义
+ *
+ *
  * Default implementation of the {@link BeanDefinitionDocumentReader} interface that
  * reads bean definitions according to the "spring-beans" DTD and XSD format
  * (Spring's default XML bean definition format).

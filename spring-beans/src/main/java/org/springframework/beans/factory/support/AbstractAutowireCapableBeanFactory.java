@@ -260,6 +260,14 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 	}
 
 	/**
+	 * 翻译：
+	 * 应用程序上下文通常使用它来注册以其他方式解析的依赖项，
+	 * 比如通过BeanFactory解析BeanFactoryAware，
+	 * 或者通过ApplicationContextAware解析ApplicationContext。
+	 * <p>缺省情况下，只有BeanFactoryAware接口被忽略。若要忽略其他类型，
+	 * 请为每种类型调用此方法
+	 *
+	 *
 	 * Ignore the given dependency interface for autowiring.
 	 * <p>This will typically be used by application contexts to register
 	 * dependencies that are resolved in other ways, like BeanFactory through
@@ -269,6 +277,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 	 * @see org.springframework.beans.factory.BeanFactoryAware
 	 * @see org.springframework.context.ApplicationContextAware
 	 */
+	//忽略自动装配的给定依赖接口
 	public void ignoreDependencyInterface(Class<?> ifc) {
 		this.ignoredDependencyInterfaces.add(ifc);
 	}

@@ -40,17 +40,21 @@ public class XmlValidationModeDetector {
 	public static final int VALIDATION_NONE = 0;
 
 	/**
+	 * 指示应该自动猜测验证模式，因为我们找不到明确的指示(可能是某些特殊字符阻塞了，或者类似的情况)。
 	 * Indicates that the validation mode should be auto-guessed, since we cannot find
 	 * a clear indication (probably choked on some special characters, or the like).
 	 */
 	public static final int VALIDATION_AUTO = 1;
 
 	/**
+	 * XML验证规则:dtd
 	 * Indicates that DTD validation should be used (we found a "DOCTYPE" declaration).
 	 */
 	public static final int VALIDATION_DTD = 2;
 
 	/**
+	 *
+	 * XML验证规则：XSD  xml schemas definition
 	 * Indicates that XSD validation should be used (found no "DOCTYPE" declaration).
 	 */
 	public static final int VALIDATION_XSD = 3;
@@ -80,7 +84,8 @@ public class XmlValidationModeDetector {
 
 
 	/**
-	 * Detect the validation mode for the XML document in the supplied {@link InputStream}.
+	 * 监测验证所提供的的XML文档的模式
+	 * detect the validation mode for the xml document in the supplied {@link InputStream}.
 	 * Note that the supplied {@link InputStream} is closed by this method before returning.
 	 * @param inputStream the InputStream to parse
 	 * @throws IOException in case of I/O failure
@@ -142,6 +147,8 @@ public class XmlValidationModeDetector {
 	}
 
 	/**
+	 *
+	 * 使用给定String中的所有前导注释数据并返回其余内容，其余内容可能为空，因为所提供的内容可能都是注释数据。对于我们的目的，重要的是去掉一行中的主要注释内容，因为第一个非注释内容要么是DOCTYPE声明，要么是文档的根元素。
 	 * Consumes all the leading comment data in the given String and returns the remaining content, which
 	 * may be empty since the supplied content might be all comment data. For our purposes it is only important
 	 * to strip leading comment content on a line since the first piece of non comment content will be either
