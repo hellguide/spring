@@ -114,6 +114,8 @@ public abstract class StringUtils {
 	}
 
 	/**
+	 *
+	 * 检查给定的{@code String}既不是{@code null}，长度也不是0。注意:对于纯由空格组成的{@code String}，此方法返回{@code true}。
 	 * Check that the given {@code String} is neither {@code null} nor of length 0.
 	 * <p>Note: this method returns {@code true} for a {@code String} that
 	 * purely consists of whitespace.
@@ -1105,6 +1107,7 @@ public abstract class StringUtils {
 	}
 
 	/**
+	 * 将给定的{@code String}标记为一个{@code String}数组
 	 * Tokenize the given {@code String} into a {@code String} array via a
 	 * {@link StringTokenizer}.
 	 * <p>Trims tokens and omits empty tokens.
